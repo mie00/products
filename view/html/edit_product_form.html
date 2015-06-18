@@ -1,0 +1,33 @@
+<form action="edit_product.php" method="post" enctype="multipart/form-data">
+    <table>
+        <tr>
+            <td><p>Product Name</p></td>
+            <td>:</td>
+            <td><input type="text" name="name" value="<?php echo $chosen_product_name ?>"/></td>
+        </tr>
+        <tr>
+            <td><p>Category</p></td>
+            <td>:</td>
+            <td>
+                <select name="category">
+                    <?php echo $select_categories ?>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td><p>Product Image</p></td>
+            <td>:</td>
+            <td><img src="images/<?php echo $chosen_product_image  ?>" width="250px"  ></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td><input type="file" name="image" value="<?php echo $chosen_product_image ?>"/></td>
+        </tr>
+
+
+    </table>
+    <input type="hidden" name="id" value="<?php  echo $chosen_product_id ?> "/>
+    <input type="submit" name="subeditproduct" value="Edit Product" />
+</form>
+<p><?php echo $msg; ?></p>

@@ -1,0 +1,23 @@
+<h3>Product Details</h3>
+<table>
+    <tr>
+        <td><label>Product Name</label></td>
+        <td>:</td>
+        <td><?php echo $product['name']  ?></td>
+    </tr>
+    <tr>
+        <td><label>Category</label></td>
+        <td>:</td>
+        <td><?php echo $product['category']  ?></td>
+    </tr>
+    <tr>
+        <td><label>Image</label></td>
+        <td>:</td>
+        <td><img src="images/<?php echo $product['image']  ?>" width="250px"  ></td>
+    </tr>
+
+</table>
+
+<a href="index1.php">Back to Main</a><br />
+
+<p><?php echo $msg ?></p>

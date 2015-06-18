@@ -1,0 +1,16 @@
+<form action="index1.php" method="post">
+    <table>
+        <tr>
+            <td><p>Choose Category</p></td>
+            <td>:</td>
+            <td>
+                <select name="chosen_category">
+                    <?php echo $select_categories ?>
+                </select>
+            </td>
+            <td><input type="submit" name="subchoosecategory" value="Confirm Choice" /></td>
+        </tr>
+    </table>
+
+</form>
+<p><?php echo $msg ?></p>
