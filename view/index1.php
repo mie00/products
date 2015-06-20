@@ -33,18 +33,14 @@
         }
 
         list($bool, $return) = $objControl->validateCategoryName($chosen_category);
-        if ($bool == true) {
-            $table_headers = "
+        if ($bool == true) {?>
         <table>
             <tr>
                 <td>Product</td>
                 <td colspan='3'>Actions</td>
             </tr>
-        ";
-            echo $table_headers;
-            $products_table = "";
-            while ($products = mysqli_fetch_array($return)) {
-                $products_table .= "
+            <?php $products_table = "";
+            while ($products = mysqli_fetch_array($return)): ?>
             <tr>
                 <td><p>" . $products['name'] . "</p></td>
                 <td>
@@ -66,17 +62,14 @@
                   </form>
                 </td>
             </tr>
-            ";
-            }
-            echo $products_table;
-            echo "</table>";
-            echo "
+            
+            <?php endwhile;?>
+            </table>
             <form action='add_new_product.php' method='post'>
                 <input type='submit' name='subgotoadd' value='Add New Product to this category'/>
                 <input type='hidden' name='current_category' value='" . $chosen_category . "'/>
             </form>
-            ";
-        }
+        <?}
         else {
             $msg = $return;
         }
@@ -84,3 +77,4 @@
     }
 include_once("html/after_content.htm");
 ?>
+
